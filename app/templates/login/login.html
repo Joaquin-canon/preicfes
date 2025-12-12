@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <!-- CSS GLOBAL DEL PROYECTO (VARIABLES + TIPOGRAFÍAS) -->
+    <link rel="stylesheet" href="/static/css/base.css">
+
+    <!-- CSS DEL LOGIN -->
+    <link rel="stylesheet" href="/static/css/login/login.css">
+</head>
+
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+
+        <div class="logo-area">📘 ICFES Prep</div>
+
+        <h2>Iniciar Sesión</h2>
+
+        <form action="/login" method="POST">
+            <input type="email" name="correo" placeholder="Correo" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+
+            <button type="submit" class="btn btn-progress">Ingresar</button>
+        </form>
+
+        <p class="signup-text">
+            ¿No tienes cuenta? <a href="#">Crear una</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

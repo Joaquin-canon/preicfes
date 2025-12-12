@@ -1,0 +1,88 @@
+/* ===============================================
+   VISTA DE TEST DIAGNÓSTICO – ESTILO PREMIUM
+   =============================================== */
+
+.diagnostico-header {
+    background: white;
+    padding: 35px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.diagnostico-header h1 {
+    font-size: 30px;
+    color: var(--azul-profundo);
+    margin-bottom: 12px;
+}
+
+.diagnostico-header p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* GRID DE ÁREAS */
+.diagnostico-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* CARDS DE RESULTADOS */
+.area-result-card {
+    background: white;
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border-left: 6px solid var(--verde-teal);
+    transition: 0.25s ease;
+}
+
+.area-result-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.area-result-card .icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.area-result-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--azul-profundo);
+    margin-bottom: 8px;
+}
+
+.area-result-card .descripcion {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.resultado {
+    background: var(--gris-claro);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultado .label {
+    font-weight: 600;
+    color: #444;
+}
+
+.resultado .value {
+    font-weight: 800;
+    color: var(--verde-teal);
+}
+
+.comentario {
+    color: #444;
+    font-size: 14px;
+}

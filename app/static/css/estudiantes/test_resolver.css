@@ -1,0 +1,93 @@
+/* ==========================================================
+   TEST REALISTA – ESTILO FORMULARIO ACADÉMICO PROFESIONAL
+   ========================================================== */
+
+.page-container {
+    max-width: 950px;
+    margin: auto;
+    padding: 25px 15px 50px 15px;
+}
+
+/* TITULO GENERAL */
+h1 {
+    font-size: 32px;
+    color: var(--azul-profundo);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* =========================================
+   TÍTULOS DE ÁREA – ESTILO FORMAL
+========================================= */
+.area-title {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 12px 0;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--verde-teal);
+    color: var(--azul-profundo);
+}
+
+/* =========================================
+   PREGUNTA – FORMATO DE EXAMEN REAL
+========================================= */
+.question-block {
+    margin-bottom: 32px;
+}
+
+.question-block h3 {
+    font-size: 18px;
+    color: var(--gris-oscuro);
+    margin-bottom: 6px;
+}
+
+.question-block p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Opciones estilo formulario */
+.question-block label {
+    display: block;
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: #444;
+}
+
+.question-block input[type="radio"] {
+    margin-right: 8px;
+    accent-color: var(--verde-teal);
+}
+
+/* BOTÓN FINAL */
+.submit-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-submit {
+    background: var(--verde-teal);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: 700;
+}
+
+.btn-submit:hover {
+    background: #147a6e;
+    transform: translateY(-3px);
+}

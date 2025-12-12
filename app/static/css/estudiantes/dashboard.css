@@ -1,0 +1,204 @@
+/* ============================================================
+   DASHBOARD ESTUDIANTE – ESTILO PROFESIONAL Y EDUCATIVO
+   ============================================================ */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--gris-claro);
+}
+
+/* ---------------------------------------------
+   SIDEBAR (ya diseñado en estudiante.css)
+   Pero lo reforzamos aquí para coherencia
+--------------------------------------------- */
+
+.sidebar {
+    width: 260px;
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    padding: 25px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 18px;
+}
+
+.sidebar .menu a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    display: block;
+    transition: 0.25s;
+}
+
+.sidebar .menu a:hover {
+    background-color: var(--verde-teal);
+}
+
+/* ---------------------------------------------
+   CONTENIDO DEL DASHBOARD
+--------------------------------------------- */
+
+.dashboard-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* ---------------------------------------------
+   TARJETAS DE GRÁFICOS
+--------------------------------------------- */
+
+.chart-card {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 40px;
+}
+
+.chart-card h3 {
+    margin-bottom: 20px;
+    color: var(--azul-profundo);
+}
+
+/* ---------------------------------------------
+   SECCIÓN DE MINI GAUGES
+--------------------------------------------- */
+
+.gauges-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.gauge-card {
+    background-color: var(--blanco);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.gauge-card h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--verde-teal);
+}
+
+.mini-gauge {
+    width: 100%;
+    height: 100px;
+}
+
+/* ---------------------------------------------
+   ANIMACIONES (suaves y profesionales)
+--------------------------------------------- */
+
+.fade-in {
+    animation: fadeIn 0.7s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------
+   RESPONSIVE
+--------------------------------------------- */
+
+@media (max-width: 1100px) {
+    .gauges-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 15px;
+    }
+
+    .sidebar .menu li {
+        margin: 0 10px;
+        display: inline-block;
+    }
+
+    .gauges-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gauges-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* ---------------------------------------------
+   ESTILOS PARA LAS GRÁFICAS (límite de tamaño)
+--------------------------------------------- */
+
+.chart-card canvas {
+    max-height: 350px;   /* tamaño ideal */
+    width: 100%;
+    height: 100%;
+}
+
+/* Mini-gauges más pequeños */
+.mini-gauge {
+    max-width: 120px;
+    max-height: 120px;
+    margin: 0 auto;
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+    .chart-card canvas {
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .chart-card canvas {
+        max-height: 230px;
+    }
+}
+.chart-card {
+    overflow: hidden;
+}

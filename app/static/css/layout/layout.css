@@ -1,0 +1,111 @@
+/* ============================================================
+   VARIABLES GLOBALES
+============================================================ */
+
+:root {
+    --azul-profundo: #0B3C5D;
+    --verde-teal: #1A9D8F;
+    --amarillo-energia: #FFC145;
+    --coral: #FF6B6B;
+    --gris-oscuro: #2F2F2F;
+    --gris-claro: #F5F7FA;
+    --blanco: #FFFFFF;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 25px rgba(0,0,0,0.18);
+
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ============================================================
+   RESET + BASE
+============================================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--azul-profundo);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+/* ============================================================
+   LAYOUT GENERAL
+============================================================ */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--gris-claro);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: var(--azul-profundo);
+    color: white;
+    padding: 20px 0;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.sidebar-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    border-radius: var(--radius-md);
+    transition: 0.25s ease;
+}
+
+.menu a:hover {
+    background: var(--verde-teal);
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+============================================================ */
+
+.content {
+    flex: 1;
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenedor de cada página */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}

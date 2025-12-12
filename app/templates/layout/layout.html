@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ICFES Prep - {% block title %}{% endblock %}</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="/static/css/layout/layout.css">
+
+    {% block extra_styles %}{% endblock %}
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-title">📘 ICFES Prep</div>
+        <ul class="menu">
+                <li><a href="/estudiante">🏠 Inicio</a></li>
+                <li><a href="/dashboard">📊 Dashboard</a></li>
+                <li><a href="/test_diagnostico">🧠 Test Diagnóstico</a></li>
+                <li><a href="/practica_rapida">⚡ Práctica Rápida</a></li>
+                <li><a href="/lecciones">📚 Lecciones</a></li>
+                <li><a href="/foro_social">💬 Foro Social</a></li>
+                <li><a href="/perfil">👤 Perfil</a></li>
+            </ul>
+    </aside>
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+</div>
+
+<!-- 🔥 Cargar CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- 🔥 Scripts específicos de cada vista -->
+{% block extra_scripts %}{% endblock %}
+
+</body>
+</html>
