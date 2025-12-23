@@ -1,0 +1,116 @@
+<div id="modal-nueva-pregunta"
+     class="fixed inset-0 z-50 hidden"
+     aria-hidden="true">
+
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/50"
+       id="modal-backdrop"></div>
+
+  <!-- Modal -->
+  <div class="relative max-w-3xl mx-auto mt-20 bg-white rounded-xl shadow-lg">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center px-6 py-4 border-b">
+      <h3 class="text-lg font-semibold text-gray-800">
+        Nueva pregunta – {{ area.nombre }}
+      </h3>
+      <button type="button"
+              id="btn-cerrar-modal"
+              class="text-gray-400 hover:text-gray-700 text-xl">
+        ×
+      </button>
+    </div>
+
+    <!-- FORM -->
+    <form id="form-nueva-pregunta"
+          method="post"
+          action="/admin/catalogo/areas/{{ area.slug }}/preguntas">
+
+      <div class="px-6 py-4 space-y-5">
+
+        <!-- TIPO -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">
+            Tipo de pregunta
+          </label>
+          <select id="tipo_pregunta"
+                  name="tipo_pregunta_codigo"
+                  class="w-full border rounded px-3 py-2 text-sm"
+                  required>
+            <option value="">Seleccione un tipo</option>
+            {% for tipo in tipos_pregunta %}
+              <option value="{{ tipo.codigo }}">
+                {{ tipo.nombre }}
+              </option>
+            {% endfor %}
+          </select>
+          <p class="text-xs text-gray-500 mt-1">
+            Selecciona el tipo para habilitar el formulario.
+          </p>
+        </div>
+
+        <!-- BLOQUE DINÁMICO -->
+        <div id="bloque-detalles" class="hidden space-y-4">
+
+          <!-- HIDDEN ÁREA -->
+          <input type="hidden"
+                 name="area_id"
+                 value="{{ area.id_area }}">
+
+          <!-- DIFICULTAD -->
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">
+              Dificultad
+            </label>
+            <select name="dificultad"
+                    class="w-full border rounded px-3 py-2 text-sm"
+                    required>
+              <option value="Baja">Baja</option>
+              <option value="Media">Media</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+
+          <!-- ENUNCIADO -->
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">
+              Enunciado
+            </label>
+            <textarea name="enunciado"
+                      rows="4"
+                      class="w-full border rounded px-3 py-2 text-sm"
+                      required></textarea>
+          </div>
+
+          <!-- FORMULARIO DINÁMICO -->
+          <div id="contenedor-formulario-dinamico"></div>
+
+          <!-- HIDDEN JSON -->
+          <input type="hidden"
+                 id="opciones_json"
+                 name="opciones_json">
+          <input type="hidden"
+                 id="respuesta_correcta"
+                 name="respuesta_correcta">
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="flex justify-end gap-3 px-6 py-4 border-t">
+        <button type="button"
+                id="btn-cancelar"
+                class="px-4 py-2 text-sm border rounded hover:bg-gray-50">
+          Cancelar
+        </button>
+        <button type="submit"
+                class="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+          Guardar
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
