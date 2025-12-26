@@ -1,17 +1,20 @@
 # 📘 PreICFES
 
-Plataforma web para la **preparación del examen ICFES** desarrollada con **FastAPI**, enfocada en estudiantes, tests diagnósticos y un roadmap de aprendizaje por áreas.
+Plataforma web para la **preparación del examen ICFES Saber 11**, desarrollada con **FastAPI**, enfocada en la gestión académica por áreas, módulos de estudio y evaluaciones diagnósticas.
+
+El sistema está diseñado con una arquitectura modular que permite escalar el contenido académico y los procesos de evaluación de forma organizada.
 
 ---
 
 ## 🚀 Tecnologías utilizadas
 
-* **Python 3.10+**
-* **FastAPI**
-* **Uvicorn**
-* **Jinja2** (templates HTML)
-* **HTML / CSS / JavaScript**
-* **MySQL** (planeado / en integración)
+- **Python 3.11+**
+- **FastAPI**
+- **Uvicorn**
+- **Jinja2** (templates HTML)
+- **HTML / CSS / TailwindCSS** (migración progresiva)
+- **SQLAlchemy**
+- **MySQL** (en integración)
 
 ---
 
@@ -21,15 +24,18 @@ Plataforma web para la **preparación del examen ICFES** desarrollada con **Fast
 preicfes/
 ├── app/
 │   ├── main.py              # Punto de entrada FastAPI
-│   ├── config.py            # Configuración general
-│   ├── database.py          # Conexión a base de datos
+│   ├── core/                # Configuración y utilidades
 │   ├── routers/             # Rutas (endpoints)
-│   ├── services/            # Lógica de negocio
+│   │   └── admin/
+│   │       └── catalogo.py  # Catálogo, áreas y tests
 │   ├── models/              # Modelos de base de datos
-│   ├── schemas/             # Esquemas Pydantic
-│   ├── static/              # Archivos estáticos (CSS, JS)
-│   └── templates/           # Templates HTML (Jinja2)
+│   ├── templates/           # Templates HTML (Jinja2)
+│   │   ├── layout/
+│   │   └── admin/
+│   │       └── catalogo/
+│   └── static/              # Archivos estáticos (CSS, JS)
 ├── venv/                    # Entorno virtual (NO se sube a GitHub)
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
@@ -45,26 +51,21 @@ git clone https://github.com/Joaquin-canon/preicfes.git
 cd preicfes
 ```
 
+---
+
 ### 2️⃣ Crear y activar entorno virtual
 
 ```bash
 python -m venv venv
-venv\Scripts\activate   # Windows
-# source venv/bin/activate  # Linux / Mac
+.\venv\Scripts\activate   # Windows
 ```
+
+---
 
 ### 3️⃣ Instalar dependencias
 
-Si existe `requirements.txt`:
-
 ```bash
 pip install -r requirements.txt
-```
-
-Si no existe:
-
-```bash
-pip install fastapi uvicorn jinja2 python-multipart
 ```
 
 ---
@@ -87,20 +88,28 @@ http://127.0.0.1:8000
 
 ## 🧭 Funcionalidades actuales
 
-* ✅ Sistema de vistas con FastAPI + Jinja2
-* ✅ Vista de estudiantes
-* ✅ Test diagnóstico
-* 🚧 Roadmap de aprendizaje (en desarrollo)
-* 🚧 Sistema de progreso por áreas ICFES
+- ✅ Catálogo de contenidos académicos
+- ✅ Gestión de áreas ICFES:
+  - RM – Razonamiento matemático
+  - LC – Lectura crítica
+  - CN – Ciencias naturales
+  - EN – Inglés
+  - CC – Competencias ciudadanas
+- ✅ Gestión de módulos de estudio por área
+- ✅ Tests especiales:
+  - Test diagnóstico breve
+  - Test socio-ocupacional
+- 🚧 Banco de preguntas (en desarrollo)
+- 🚧 Seguimiento de progreso académico
 
 ---
 
 ## 📌 Convenciones importantes
 
-* El entorno virtual **`venv/` nunca se sube a GitHub**
-* Los archivos HTML deben ir **solo en `templates/`**
-* Los archivos CSS y JS deben ir **solo en `static/`**
-* El proyecto se ejecuta siempre con:
+- El entorno virtual **`venv/` no se sube a GitHub**
+- Los templates HTML van **solo en `app/templates/`**
+- Los archivos CSS y JS van **solo en `app/static/`**
+- El proyecto se ejecuta siempre con:
 
 ```bash
 uvicorn app.main:app --reload
@@ -110,16 +119,18 @@ uvicorn app.main:app --reload
 
 ## 🛠️ Próximas mejoras
 
-* 📊 Radar de progreso por áreas ICFES
-* 🔐 Autenticación de usuarios
-* 🧠 Recomendaciones personalizadas
-* 📈 Seguimiento de resultados
+- 📚 Banco de preguntas por área
+- 📊 Métricas y resultados por estudiante
+- 🔐 Autenticación y gestión de roles
+- 🧠 Recomendaciones de estudio
+- 📈 Visualización de progreso académico
 
 ---
 
 ## 👨‍💻 Autor
-
-**Joaquín Canon**
+ SENA Tecnoparque 
+ co Autor
+**Joaquín Canon**  
 Proyecto académico y educativo
 
 ---
